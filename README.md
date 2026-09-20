@@ -52,7 +52,9 @@ Add to your project's agent instructions:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\quiet-gradle.tests.ps1
 ```
 
-Uses a mock `gradlew.bat`; no real Gradle or network. Fixtures go under `.agent-logs\tests` and are removed afterwards. Ctrl+C handling is not automated.
+On Linux: `bash ./quiet-gradle.tests.sh`.
+
+Both use a mock Gradle wrapper; no real Gradle or network. Fixtures go under `.agent-logs` (`tests` subfolder) and are removed afterwards. Ctrl+C handling is not automated.
 
 ## Notes
 
