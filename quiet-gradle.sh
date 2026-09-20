@@ -115,6 +115,7 @@ start_gradle() {
       n=${f##*/}
       [[ $n =~ ^[0-9]+$ ]] && ((n > 2)) && eval "exec $n>&-"
     done
+    cd -- "$root" || exit $EXIT_INTERNAL
     exec "$gradle" "${gargs[@]}"
   ) >>"$log" 2>&1 </dev/null &
   gpid=$!
